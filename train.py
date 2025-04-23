@@ -10,7 +10,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("Using device:", device)
 
 # Load balanced data
-df = pd.read_csv("./data/Balanced_Essay_Data.csv")
+df = pd.read_csv("/home/pooh/coding/ai-text-detector/Balanced_Essay_Data.csv")
 # (Make sure this path is correct!)
 
 # Prepare
@@ -81,6 +81,6 @@ trainer = Trainer(
 trainer.train()
 
 # Save
-model.save_pretrained("./saved_model_rl")
-tokenizer.save_pretrained("./saved_model_rl")
+model.save_pretrained("saved_model_rl")
+tokenizer.save_pretrained("saved_model_rl")
 print("✅ roberta-large training complete.")

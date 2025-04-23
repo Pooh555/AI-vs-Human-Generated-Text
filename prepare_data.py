@@ -1,7 +1,7 @@
 import pandas as pd
 
 # 1. Load original data
-df = pd.read_csv("./data/Training_Essay_Data.csv")
+df = pd.read_csv("/home/pooh/coding/ai-text-detector/Training_Essay_Data.csv")
 
 # 2. Keep only essays ≥150 words
 df["word_count"] = df["text"].str.split().str.len()
@@ -20,5 +20,5 @@ balanced = pd.concat([
 ]).sample(frac=1, random_state=42).reset_index(drop=True)
 
 # 5. Save your new CSV
-balanced.to_csv("./data/Balanced_Essay_Data.csv", index=False)
+balanced.to_csv("/home/pooh/coding/ai-text-detector/Balanced_Essay_Data.csv", index=False)
 print(f"Saved {len(balanced)} essays equally split AI/Human.")
