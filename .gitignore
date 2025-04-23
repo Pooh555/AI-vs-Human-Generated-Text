@@ -4,3 +4,4 @@ __pycache__/
 saved_model*/
 *.zip
 Training_Essay_Data_old.csv
+train_old.py
