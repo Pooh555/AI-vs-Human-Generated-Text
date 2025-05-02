@@ -48,7 +48,7 @@ class StreamingEssayDataset(torch.utils.data.Dataset):
 # ─────────────────────────────────────────────────────────────────────
 def main():
     # a) Load & normalize the CSV
-    df = pd.read_csv("./data/AI_Human.csv")
+    df = pd.read_csv("/home/pooh/coding/ai-text-detector/Balanced_Essay_Data.csv")
     # rename label/class → generated
     if "generated" not in df.columns:
         if "label" in df.columns:
@@ -117,9 +117,8 @@ def main():
         per_device_eval_batch_size=4,
         gradient_accumulation_steps=2,
 
-        evaluation_strategy="steps",
-        save_strategy="steps",
-        save_steps=2000,        # checkpoint every 2000 updates
+        evaluation_strategy="epoch",
+        save_strategy="epoch",
         save_total_limit=5,     # keep only last 5
 
         logging_steps=100,
